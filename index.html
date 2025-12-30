@@ -395,55 +395,49 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Methodology</h2>
 
-      <div class="columns is-vcentered">
+      <!-- Text block -->
+      <div class="columns is-centered">
+        <div class="content">
 
-        <!-- Text column -->
-        <div class="column is-6">
-          <div class="content">
+          <p>
+            <strong>Graph Construction.</strong>
+            The physical topology of the 3-bar tensegrity robot is modeled as a directed graph
+            <em>G = (V, E)</em>, where each node corresponds to a rod end-cap, and edges represent
+            mechanical connections (rigid rods, passive tendons, and active tendons) that enable
+            message passing between connected components. Each node has features (e.g., 3D position, 
+            velocity of that end-cap, global task command broadcast), each edge has features encoding 
+            relative distance and edge type. The GNN encoder applies multiple layers of message 
+            passing over this graph to allow components to share structural information. 
+          </p>
 
-            <p>
-              <strong>Graph Construction.</strong>
-              The physical topology of the 3-bar tensegrity robot is modeled as a directed graph
-              <em>G = (V, E)</em>, where each node corresponds to a rod end-cap, and edges represent
-              mechanical connections (rigid rods, passive tendons, and active tendons) that allow
-              message passing between connected components.
-            </p>
+          <p>
+            <strong>GNN-based SAC (G-SAC).</strong>
+            The GNN serves as the actor network within the Soft Actor-Critic (SAC) framework.
+            Observations are first mapped to node and edge features, after which the GNN encoder
+            extracts a high-level representation capturing structural coupling.
+            The actor head outputs tendon length commands for actuation.
+          </p>
 
-            <p>
-              Each node is associated with features such as the 3D position and velocity of the
-              corresponding end-cap, as well as a globally broadcast task command. Edge features
-              encode relative distances and connection types. A GNN encoder applies multiple layers
-              of message passing over this graph to enable information sharing across the structure.
-            </p>
+          <p>
+            <strong>Training Formulation.</strong>
+            The system is trained using SAC on a set of locomotion primitives, including
+            straight-line tracking and clockwise and counterclockwise in-place turning.
+            Performance is evaluated against MLP-based SAC and other reinforcement learning
+            baselines.
+          </p>
 
-            <p>
-              <strong>GNN-based SAC (G-SAC).</strong>
-              The GNN serves as the actor network within the Soft Actor-Critic (SAC) framework.
-              Observations are first mapped to node and edge features, after which the GNN encoder
-              extracts a high-level representation that captures structural coupling.
-              The actor head then outputs tendon length commands for actuation.
-            </p>
-
-            <p>
-              <strong>Training Formulation.</strong>
-              The entire system is trained using SAC on a set of locomotion primitives, including
-              straight-line tracking as well as clockwise and counterclockwise in-place turning.
-              Performance is evaluated against MLP-based SAC and other reinforcement learning
-              baselines.
-            </p>
-
-          </div>
         </div>
+      </div>
 
-        <!-- Framework figure -->
-        <div class="column is-6 has-text-centered">
+      <!-- Framework Figure -->
+      <div class="columns is-centered">
+        <div class="column is-full has-text-centered">
           <figure>
             <img src="static/images/tgrl_pipeline.jpg"
                  alt="Overview of the proposed morphology-aware GNN-SAC framework for tensegrity robot locomotion"
                  style="max-width: 100%; height: auto;">
           </figure>
         </div>
-
       </div>
     </div>
   </div>
