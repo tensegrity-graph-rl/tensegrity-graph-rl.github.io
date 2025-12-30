@@ -354,13 +354,14 @@
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3 has-text-centered">Motivation</h2>
-          <div class="content">
+      <h2 class="title is-3 has-text-centered">Motivation</h2>
+      <div class="columns is-vcentered">
 
+        <!-- Text column -->
+        <div class="column is-6">
+          <div class="content">
             <p>
-              Tensegrity robots maintain stability through a global balance of tension—every rod and cable contributes to the overall equilibrium. This intrinsic tensional coupling means that even a local actuation affects the entire structure, making their dynamics strongly interdependent and difficult to model with traditional independent-joint representations.
+              Tensegrity robots maintain stability through a global balance of tension: every rod and cable contributes to the overall equilibrium. This intrinsic tensional coupling means that even a local actuation affects the entire structure, making their dynamics strongly interdependent and difficult to model with traditional independent-joint representations.
             </p>
 
             <p>
@@ -368,11 +369,20 @@
             </p>
 
             <p>
-              Therefore, this work adopts a morphology-aware policy using a Graph Neural Network (GNN) that mirrors the robot’s physical topology. By aligning the control policy with the robot’s inherent graph structure, the agent can learn coordinated behaviors that respect the underlying physics of tension and coupling.
+              Therefore, this work adopts a morphology-aware policy using a Graph Neural Network (GNN) that mirrors the robot's physical topology. By aligning the control policy with the robot's inherent graph structure, the agent can learn coordinated behaviors that respect the underlying physics of tension and coupling.
             </p>
-
           </div>
         </div>
+
+        <!-- Figure column -->
+        <div class="column is-6 has-text-centered">
+          <figure>
+            <img src="static/images/tgrl_teaser.jpg"
+                alt="From tensegrity robot to graph-based learning"
+                style="max-width: 100%; height: auto;">
+          </figure>
+        </div>
+
       </div>
     </div>
   </div>
