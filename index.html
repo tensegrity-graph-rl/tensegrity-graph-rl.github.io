@@ -187,7 +187,12 @@
   </button>
 
   <!-- More Works Dropdown -->
-  <div class="more-works-container">
+        <!-- TODO: Replace with your lab's related works -->
+            <!-- TODO: Replace with actual paper title -->
+            <!-- TODO: Replace with brief description -->
+            <!-- TODO: Replace with venue and year -->
+        <!-- TODO: Add more related works or remove extra items -->
+  <!-- <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
       <i class="fas fa-flask"></i>
       More Works
@@ -201,19 +206,14 @@
         </button>
       </div>
       <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
         <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
           <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
             <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
             <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
             <span class="work-venue">Conference/Journal 2024</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
-        <!-- TODO: Add more related works or remove extra items -->
         <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
           <div class="work-info">
             <h5>Paper Title 2</h5>
@@ -232,7 +232,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <main id="main-content">
   <section class="hero">
@@ -388,6 +388,67 @@
   </div>
 </section>
 <!-- End paper motivation -->
+
+<!-- Methodology -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Methodology</h2>
+
+      <div class="columns is-vcentered">
+
+        <!-- Text column -->
+        <div class="column is-6">
+          <div class="content">
+
+            <p>
+              <strong>Graph Construction.</strong>
+              The physical topology of the 3-bar tensegrity robot is modeled as a directed graph
+              <em>G = (V, E)</em>, where each node corresponds to a rod end-cap, and edges represent
+              mechanical connections (rigid rods, passive tendons, and active tendons) that allow
+              message passing between connected components.
+            </p>
+
+            <p>
+              Each node is associated with features such as the 3D position and velocity of the
+              corresponding end-cap, as well as a globally broadcast task command. Edge features
+              encode relative distances and connection types. A GNN encoder applies multiple layers
+              of message passing over this graph to enable information sharing across the structure.
+            </p>
+
+            <p>
+              <strong>GNN-based SAC (G-SAC).</strong>
+              The GNN serves as the actor network within the Soft Actor-Critic (SAC) framework.
+              Observations are first mapped to node and edge features, after which the GNN encoder
+              extracts a high-level representation that captures structural coupling.
+              The actor head then outputs tendon length commands for actuation.
+            </p>
+
+            <p>
+              <strong>Training Formulation.</strong>
+              The entire system is trained using SAC on a set of locomotion primitives, including
+              straight-line tracking as well as clockwise and counterclockwise in-place turning.
+              Performance is evaluated against MLP-based SAC and other reinforcement learning
+              baselines.
+            </p>
+
+          </div>
+        </div>
+
+        <!-- Framework figure -->
+        <div class="column is-6 has-text-centered">
+          <figure>
+            <img src="static/images/tgrl_pipeline.jpg"
+                 alt="Overview of the proposed morphology-aware GNN-SAC framework for tensegrity robot locomotion"
+                 style="max-width: 100%; height: auto;">
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End methodology -->
 
 
 <!-- Image carousel -->
