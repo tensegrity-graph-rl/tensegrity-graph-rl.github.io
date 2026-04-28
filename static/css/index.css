@@ -290,6 +290,46 @@ body {
   font-weight: 500;
 }
 
+/* Result carousel card content */
+.results-carousel .result-card-content {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.results-carousel .result-card-title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.results-carousel .result-card-media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.results-carousel .result-card-media-grid img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.results-carousel .result-card-tags {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .results-carousel .result-card-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-carousel .result-card-media-grid img {
+    height: auto;
+  }
+}
+
 /* Pagination and Misc Improvements */
 .slider-pagination .slider-page {
   background: var(--primary-color);

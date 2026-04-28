@@ -246,7 +246,7 @@
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a target="_blank">Anonymous Authors</a>
+                <a target="_blank">Chi Zhang, Mingrui Li, Wenzhe Tong, and Xiaonan Huang</a>
                 <!-- <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
                 <span class="author-block">
                   <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
@@ -288,7 +288,7 @@
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/tensegrity-graph-rl/GSAC_tensegrity_locomotion" target="_blank"
+                    <a href="https://github.com/drsteinkauz/GSAC_tensegrity_locomotion" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -323,127 +323,1030 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        A morphology-aware reinforcement learning framework that combines graph neural networks
+        with Soft Actor-Critic for robust 3-bar tensegrity robot locomotion.
+      </h2>
       <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
         <source src="static/videos/tgrl_ral_video_24_720_180_compressed.mp4" type="video/mp4">
       </video>
-      <!-- <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2> -->
     </div>
   </div>
 </section>
 <!-- End teaser video -->
 
+
 <!-- Paper abstract -->
-          <!-- TODO: Replace with your paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Tensegrity robots combine rigid rods and elastic cables, offering high resilience and deployability but at the same time posing major challenges for locomotion control due to their underactuated and highly coupled dynamics. This paper introduces a morphology-aware reinforcement learning framework that integrates a graph neural network (GNN) into the Soft Actor-Critic (SAC) algorithm. By representing the robot's physical topology as a graph, the proposed GNN-based policy captures coupling among components, enabling faster and more stable learning than conventional multilayer perceptron (MLP) policies. The method is validated on a physical 3-bar tensegrity robot across three locomotion primitives, including straight-line tracking and bidirectional turning. It shows superior sample efficiency, robustness to noise and stiffness variations, and improved trajectory accuracy. Additionally, the learned policies transfer directly from simulation to hardware without fine-tuning, achieving stable real-world locomotion. These results demonstrate the advantages of incorporating structural priors into reinforcement learning for tensegrity robot control.
+<section class="hero is-light publication-body" id="abstract">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
         </div>
       </div>
+
+      <div class="box" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+        <div class="content has-text-justified">
+          <p>
+            Tensegrity robots combine rigid rods and elastic cables, offering high resilience and
+            deployability while posing major challenges for locomotion control due to their
+            underactuated and highly coupled dynamics. This paper introduces a morphology-aware
+            reinforcement learning framework that integrates a graph neural network
+            <strong>(GNN)</strong> into the Soft Actor-Critic <strong>(SAC)</strong> algorithm.
+          </p>
+
+          <p>
+            By representing the robot's physical topology as a graph, the proposed GNN-based policy
+            captures coupling among components, enabling faster and more stable learning than
+            conventional multilayer perceptron <strong>(MLP)</strong> policies. The method is
+            validated on a physical 3-bar tensegrity robot across three locomotion primitives,
+            including straight-line tracking and bidirectional turning.
+          </p>
+
+          <p>
+            The learned policies show improved sample efficiency, robustness to noise and stiffness
+            variations, and better trajectory accuracy. They also transfer directly from simulation
+            to hardware without fine-tuning, achieving stable real-world locomotion.
+          </p>
+        </div>
+
+        <!-- Key tags -->
+        <div class="tags are-medium is-centered" style="margin-top: 1.5rem;">
+          <span class="tag is-link is-light">Tensegrity Robots</span>
+          <span class="tag is-info is-light">Graph Neural Networks</span>
+          <span class="tag is-primary is-light">Soft Actor-Critic</span>
+          <span class="tag is-success is-light">Morphology-aware RL</span>
+          <span class="tag is-warning is-light">Sim-to-Real Transfer</span>
+        </div>
+      </div>
+
+      <!-- Contribution highlights -->
+      <div class="columns is-centered" style="margin-top: 1rem;">
+
+        <div class="column">
+          <div class="box has-text-centered"
+              style="height: 100%; border-left: 4px solid var(--primary-color); border-radius: var(--border-radius-lg);">
+            <p class="heading">Contribution 1</p>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.75rem !important;">
+              Morphology-aware GNN Actor
+            </p>
+
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              We design a GNN-based actor that encodes the physical topology of tensegrity robots and captures
+              the intrinsic coupling between rods, tendons, and structural components.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box has-text-centered"
+              style="height: 100%; border-left: 4px solid var(--accent-color); border-radius: var(--border-radius-lg);">
+            <p class="heading">Contribution 2</p>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.75rem !important;">
+              Efficient and High-Performance GNN-SAC
+            </p>
+
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              We integrate the proposed GNN actor into the Soft Actor-Critic framework and demonstrate substantial
+              gains in both training efficiency and final task performance compared with conventional MLP baselines.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box has-text-centered"
+              style="height: 100%; border-left: 4px solid #10b981; border-radius: var(--border-radius-lg);">
+            <p class="heading">Contribution 3</p>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.75rem !important;">
+              Hardware Sim-to-Real Transfer
+            </p>
+
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              We validate the learned locomotion primitives on hardware, including straight-line tracking and
+              clockwise/counterclockwise turning, with direct transfer from simulation to the physical robot
+              without fine-tuning.
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <!-- End contribution highlights -->
+
     </div>
   </div>
 </section>
 <!-- End paper abstract -->
 
+
 <!-- Paper motivation -->
-<section class="hero">
+<section class="hero publication-body" id="motivation">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Motivation</h2>
-      <div class="columns is-vcentered">
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Motivation</h2>
+
+          <p class="subtitle is-5" style="color: var(--text-secondary); line-height: 1.7;">
+            Tensegrity robots are not independent-joint systems. Their locomotion emerges from
+            global tension, structural coupling, and morphology.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-vcentered is-variable is-6">
 
         <!-- Text column -->
         <div class="column is-6">
-          <div class="content">
-            <p>
-              Tensegrity robots maintain stability through a global balance of tension: every rod and cable contributes to the overall equilibrium. This intrinsic tensional coupling means that even a local actuation affects the entire structure, making their dynamics strongly interdependent and difficult to model with traditional independent-joint representations.
-            </p>
 
-            <p>
-              At the same time, this network of tensile and compressive elements naturally forms a graph. Such a structural property makes tensegrity systems particularly suitable for graph-based learning architectures.
-            </p>
-
-            <p>
-              Therefore, this work adopts a morphology-aware policy using a Graph Neural Network (GNN) that mirrors the robot's physical topology. By aligning the control policy with the robot's inherent graph structure, the agent can learn coordinated behaviors that respect the underlying physics of tension and coupling.
-            </p>
+          <div class="box" style="border-radius: var(--border-radius-lg);">
+            <article class="media">
+              <div class="media-left">
+                <span class="tag is-link is-medium">1</span>
+              </div>
+              <div class="media-content">
+                <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.5rem !important;">
+                  Global tensional coupling
+                </p>
+                <p style="color: var(--text-secondary);">
+                  Every rod and cable contributes to the overall equilibrium. A local actuation can
+                  influence the entire structure, making the dynamics strongly interdependent.
+                </p>
+              </div>
+            </article>
           </div>
+
+          <div class="box" style="border-radius: var(--border-radius-lg);">
+            <article class="media">
+              <div class="media-left">
+                <span class="tag is-info is-medium">2</span>
+              </div>
+              <div class="media-content">
+                <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.5rem !important;">
+                  Natural graph structure
+                </p>
+                <p style="color: var(--text-secondary);">
+                  The network of tensile and compressive elements naturally forms a graph, making
+                  tensegrity systems suitable for graph-based learning architectures.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="box" style="border-radius: var(--border-radius-lg);">
+            <article class="media">
+              <div class="media-left">
+                <span class="tag is-success is-medium">3</span>
+              </div>
+              <div class="media-content">
+                <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.5rem !important;">
+                  Morphology-aware control
+                </p>
+                <p style="color: var(--text-secondary);">
+                  A GNN policy mirrors the physical topology of the robot, allowing the controller
+                  to learn coordinated behaviors that respect structural coupling.
+                </p>
+              </div>
+            </article>
+          </div>
+
         </div>
 
         <!-- Figure column -->
         <div class="column is-6 has-text-centered">
           <figure>
             <img src="static/images/tgrl_teaser.jpg"
-                alt="From tensegrity robot to graph-based learning"
-                style="max-width: 100%; height: auto;">
+                 alt="From tensegrity robot to graph-based learning"
+                 loading="lazy">
+            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              From physical morphology to graph representation: rods and tendons define the
+              message-passing structure used by the policy.
+            </figcaption>
           </figure>
         </div>
 
       </div>
+
     </div>
   </div>
 </section>
 <!-- End paper motivation -->
 
+
 <!-- Methodology -->
-<section class="hero">
+<section class="hero is-light publication-body" id="methodology">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Methodology</h2>
 
-      <!-- Text block -->
-      <div class="columns is-centered">
-        <div class="content">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Methodology</h2>
 
-          <p>
-            <strong>Graph Construction.</strong>
-            The physical topology of the 3-bar tensegrity robot is modeled as a directed graph
-            <em>G = (V, E)</em>, where each node corresponds to a rod end-cap, and edges represent
-            mechanical connections (rigid rods, passive tendons, and active tendons) that enable
-            message passing between connected components. Each node has features (e.g., 3D position, 
-            velocity of that end-cap, global task command broadcast), each edge has features encoding 
-            relative distance and edge type. The GNN encoder applies multiple layers of message 
-            passing over this graph to allow components to share structural information. 
+          <p class="subtitle is-5" style="color: var(--text-secondary); line-height: 1.7;">
+            The framework converts robot morphology into a graph, learns structural interactions
+            through message passing, and trains the resulting policy with SAC.
           </p>
-
-          <p>
-            <strong>GNN-based SAC (G-SAC).</strong>
-            The GNN serves as the actor network within the Soft Actor-Critic (SAC) framework.
-            Observations are first mapped to node and edge features, after which the GNN encoder
-            extracts a high-level representation capturing structural coupling.
-            The actor head outputs tendon length commands for actuation.
-          </p>
-
-          <p>
-            <strong>Training Formulation.</strong>
-            The system is trained using SAC on a set of locomotion primitives, including
-            straight-line tracking and clockwise and counterclockwise in-place turning.
-            Performance is evaluated against MLP-based SAC and other reinforcement learning
-            baselines.
-          </p>
-
         </div>
       </div>
 
+      <!-- Method cards -->
+      <div class="columns is-variable is-5">
+
+        <div class="column">
+          <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);">
+            <p class="heading">Step 1</p>
+            <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.75rem !important;">
+              Graph Construction
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              The physical topology of the 3-bar tensegrity robot is modeled as a directed graph
+              <em>G = (V, E)</em>. Nodes represent rod end-caps, while edges represent rigid rods,
+              passive tendons, and active tendons.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);">
+            <p class="heading">Step 2</p>
+            <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.75rem !important;">
+              GNN-based SAC
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              Node and edge features are processed through message passing. The GNN actor extracts
+              a morphology-aware representation and outputs tendon length commands for actuation.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);">
+            <p class="heading">Step 3</p>
+            <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.75rem !important;">
+              Training and Evaluation
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              Policies are trained on straight-line tracking and bidirectional turning, then
+              compared against MLP-based SAC and other reinforcement learning baselines.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
       <!-- Framework Figure -->
-      <div class="columns is-centered">
+      <div class="columns is-centered" style="margin-top: 1.5rem;">
         <div class="column is-full has-text-centered">
           <figure>
             <img src="static/images/tgrl_pipeline.jpg"
                  alt="Overview of the proposed morphology-aware GNN-SAC framework for tensegrity robot locomotion"
-                 style="max-width: 100%; height: auto;">
+                 loading="lazy">
+            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Overview of the proposed morphology-aware GNN-SAC framework for tensegrity robot locomotion.
+            </figcaption>
           </figure>
         </div>
       </div>
+
+      <!-- Key idea -->
+      <!-- <div class="notification is-info is-light" style="margin-top: 2rem; border-radius: var(--border-radius-lg);">
+        <strong>Key idea:</strong>
+        Instead of flattening the robot state into a generic observation vector, the policy uses the
+        tensegrity structure itself as an inductive bias, enabling the controller to reason over
+        rods, tendons, and their physical connections.
+      </div> -->
+
     </div>
   </div>
 </section>
 <!-- End methodology -->
+
+
+<!-- Results -->
+<section class="hero publication-body" id="results">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+
+      <!-- Section title -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+
+          <p class="subtitle is-5" style="color: var(--text-secondary); line-height: 1.7;">
+            We evaluate the proposed GNN-SAC policy across learning efficiency, motion primitive
+            quality, robustness, cross-morphology generalization, and zero-shot sim-to-real transfer
+            on a physical 3-bar tensegrity robot.
+          </p>
+        </div>
+      </div>
+
+      <!-- Result highlights -->
+      <div class="columns is-variable is-4 is-multiline" style="margin-top: 1rem;">
+
+        <div class="column is-6">
+          <div class="box has-text-centered"
+              style="height: 100%; border-radius: var(--border-radius-lg); border-top: 4px solid var(--primary-color);">
+            <p class="heading">Learning</p>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.5rem !important;">
+              Efficient Learning and Better Motion Performance
+            </p>
+
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              The proposed GNN-SAC policy improves both training efficiency and final task performance,
+              achieving more accurate tracking and more stable turning than MLP-based baselines.
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-6">
+          <div class="box has-text-centered"
+              style="height: 100%; border-radius: var(--border-radius-lg); border-top: 4px solid var(--accent-color);">
+            <p class="heading">Robustness</p>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.5rem !important;">
+              Robustness and Generalization
+            </p>
+
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              The learned policy remains effective under stiffness variation, observation noise,
+              sloped terrain, and actuation errors, and further generalizes across robot morphologies.
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-6">
+          <div class="box has-text-centered"
+              style="height: 100%; border-radius: var(--border-radius-lg); border-top: 4px solid #10b981;">
+            <p class="heading">Composition</p>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.5rem !important;">
+              Composable Motion Primitives
+            </p>
+
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              Straight-line tracking and bidirectional turning primitives can be sequenced by a high-level
+              planner to follow complex waypoint trajectories such as infinity, spiral, and flower paths.
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-6">
+          <div class="box has-text-centered"
+              style="height: 100%; border-radius: var(--border-radius-lg); border-top: 4px solid #f59e0b;">
+            <p class="heading">Hardware</p>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-bottom: 0.5rem !important;">
+              Zero-shot Sim-to-Real Transfer
+            </p>
+
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              Policies trained only in simulation transfer directly to the physical 3-bar tensegrity robot
+              without fine-tuning, demonstrating stable real-world locomotion.
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <!-- End result highlights -->
+
+      <!-- Results carousel -->
+      <template>
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <div class="columns is-centered" style="margin-top: 2.5rem;">
+            <div class="column is-full">
+              <div class="columns is-vcentered is-variable is-6">
+
+                  <div class="column is-7">
+                    <div class="publication-video" style="padding-bottom: 56.25%;">
+                      <video controls muted playsinline loop preload="metadata"
+                            poster="static/images/rollout.png"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                                    object-fit: cover; border-radius: var(--border-radius-lg);">
+                        <source src="static/videos/hardware_rollout.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+
+                  <div class="column is-5">
+                    <p class="heading">Hardware Demonstration</p>
+                    <p class="title is-4" style="padding-bottom: 0; margin-bottom: 1rem !important;">
+                      Zero-shot Real-world Locomotion
+                    </p>
+
+                    <div class="result-card-content" style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                      <p style="margin-bottom: 1rem;">
+                        Policies trained only in simulation are deployed on the physical 3-bar tensegrity
+                        robot without fine-tuning. The robot successfully executes straight-line tracking,
+                        clockwise turning, and counterclockwise turning.
+                      </p>
+
+                      <p style="margin-bottom: 1rem;">
+                        In hardware experiments, the robot achieves stable coordinated rolling, with
+                        mean forward tracking speed of <strong>0.256 m/s</strong>, counterclockwise
+                        turning rate of <strong>2.76&deg;/s</strong>, and clockwise turning rate of
+                        <strong>1.72&deg;/s</strong>.
+                      </p>
+                    </div>
+
+                    <div class="tags are-medium">
+                      <span class="tag is-success is-light">Zero-shot Transfer</span>
+                      <span class="tag is-info is-light">Physical Robot</span>
+                      <span class="tag is-link is-light">GNN-SAC</span>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 1: Learning performance -->
+        <div class="item">
+          <div class="columns is-centered has-text-centered" style="margin-top: 0rem;">
+            <div class="column is-four-fifths">
+              <h3 class="title is-4" style="margin-bottom: 0.75rem;">
+                Learning Performance
+              </h3>
+            </div>
+          </div>
+
+          <div class="columns is-vcentered is-variable is-6">
+
+            <div class="column is-7">
+              <figure>
+                <img src="static/images/reward_subplot.png"
+                    alt="Benchmark of learning performance across algorithms and GNN depths"
+                    loading="lazy"
+                    style="width: 100%; height: auto;">
+                <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                  Learning curves across locomotion primitives. G-SAC outperforms M-SAC, PPO, and TD3,
+                  while deeper GNN encoders improve performance through multi-hop message passing.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="column is-5">
+              <!-- <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);"> -->
+                <p class="heading">Key Findings</p>
+                <div class="result-card-content" style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+                  <ul style="list-style-type: disc; padding-left: 1.5rem;">
+                    <li style="margin-bottom: 1rem;">
+                      <strong>G-SAC</strong> achieves better reward per training step and per wall-clock time
+                      across straight-line tracking, counterclockwise turning, and clockwise turning.
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                      The improvement over <strong>M-SAC</strong> indicates that morphology-aware graph
+                      encoding accelerates policy learning.
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                      Three-layer GNN encoders slightly outperform two-layer encoders, suggesting the benefit
+                      of multi-hop structural message passing.
+                    </li>
+                  </ul>
+                </div>
+              <!-- </div> -->
+
+              <div class="notification is-info is-light" style="border-radius: var(--border-radius-lg);">
+                <div class="result-card-content">
+                  <strong>Takeaway:</strong>
+                  graph structure improves both sample efficiency and final policy quality.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- Card 2: Motion primitive evaluation -->
+        <div class="item">
+          <div class="columns is-centered has-text-centered" style="margin-top: 0rem;">
+            <div class="column is-four-fifths">
+              <h3 class="title is-4" style="margin-bottom: 0.75rem;">
+                Motion Primitive Evaluation
+              </h3>
+            </div>
+          </div>
+
+          <div class="columns is-variable is-5">
+
+            <div class="column is-6">
+              <figure style="margin-bottom: 2rem;">
+                <img src="static/images/tracking.png"
+                    alt="Simulation evaluation of learned motion primitives"
+                    loading="lazy"
+                    style="width: 100%; height: auto;">
+                <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                  Simulation evaluation of learned motion primitives. G-SAC achieves lower tracking error
+                  and faster, more stable bidirectional turning than M-SAC.
+                </figcaption>
+              </figure>
+
+              <div class="notification is-info is-light" style="border-radius: var(--border-radius-lg);">
+                <div class="result-card-content">
+                  <strong>Takeaway:</strong> 
+                  G-SAC achieves more accurate tracking and more stable turning than M-SAC.
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <!-- <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);"> -->
+                <p class="heading">Primitive Quality</p>
+
+                <div class="result-card-content" style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                  <p style="margin-bottom: 1rem;">
+                    We evaluate straight-line tracking and bidirectional turning under randomized initial poses.
+                  </p>
+                  
+                  <ul style="list-style-type: disc; padding-left: 1.5rem;">
+                    <li style="margin-bottom: 1rem;">
+                      For straight-line tracking, the robot reaches target waypoints at different heading
+                      offsets, and performance is measured by the final-position distribution around the target.
+                    </li>
+
+                    <li style="margin-bottom: 1rem;">
+                      For turning, policies are evaluated by average yaw rate during counterclockwise and
+                      clockwise rotations. G-SAC produces faster and more stable rotations compared with M-SAC.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="tags are-medium">
+                  <span class="tag is-link is-light">Straight-line Tracking</span>
+                  <span class="tag is-info is-light">CW Turning</span>
+                  <span class="tag is-success is-light">CCW Turning</span>
+                </div>
+              <!-- </div> -->
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- Card 3: Robustness -->
+        <div class="item">
+          <div class="columns is-centered" style="margin-top: 2.5rem;">
+            <div class="column is-full">
+              <div class="columns is-vcentered is-variable is-6">
+                <div class="column is-7">
+                  <img src="static/images/robustness_5.png"
+                      alt="Robustness evaluation under model and environment perturbations"
+                      loading="lazy">
+                </div>
+
+                <div class="column is-5">
+                  <p class="heading">Result 3 / Robustness</p>
+
+                  <h3 class="result-card-title">
+                    Robustness
+                  </h3>
+
+                  <div class="result-card-content" style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+                    <p style="margin-bottom: 1rem;">
+                      The policy remains effective under stiffness variation, observation noise, inclined terrain,
+                      dynamic stiffness variation, and actuation error. Across perturbations, G-SAC maintains
+                      smoother and more stable behaviors than M-SAC.
+                    </p>
+
+                    <p style="margin-bottom: 1rem;">
+                      The same policy trained on the 3-bar robot can also be deployed to 4-bar and 5-bar
+                      tensegrity configurations without retraining, demonstrating zero-shot generalization
+                      across morphologies.
+                    </p>
+                  </div>
+
+                  <div class="tags are-medium result-card-tags">
+                    <span class="tag is-link is-light">Stiffness Variation</span>
+                    <span class="tag is-info is-light">Observation Noise</span>
+                    <span class="tag is-primary is-light">Ground slope</span>
+                    <span class="tag is-warning is-light">Actuation error</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Cross-Morphology Generalization -->
+        <div class="item">
+          <img src="static/images/cross_morphology_generalization.png"
+              alt="Cross-morphology generalization from 3-bar to 4-bar and 5-bar tensegrity robots"
+              loading="lazy">
+
+          <div class="result-card-content">
+            <p class="heading">Result 4 / Generalization</p>
+
+            <h3 class="result-card-title">
+              Cross-Morphology Generalization
+            </h3>
+
+            <p style="margin-bottom: 1rem;">
+              The same policy trained on the 3-bar robot can also be deployed to 4-bar and 5-bar
+              tensegrity configurations without retraining, demonstrating zero-shot generalization
+              across morphologies.
+            </p>
+          </div>
+        </div>
+
+
+        <!-- Card 5: Composable primitives -->
+        <div class="item">
+          <img src="static/images/sim_traj.png"
+               alt="Composed trajectory tracking using learned motion primitives"
+               loading="lazy">
+
+          <div class="result-card-content">
+            <p class="heading">Result 4 / Composition</p>
+
+            <h3 class="result-card-title">
+              Composable Motion Primitives
+            </h3>
+
+            <p>
+              Straight-line tracking and bidirectional turning can be sequenced by a high-level planner
+              to follow complex waypoint trajectories. The robot follows infinity-shaped, spiral, and
+              six-petal flower paths by composing learned primitives.
+            </p>
+
+            <div class="tags are-medium result-card-tags">
+              <span class="tag is-primary is-light">Primitive Composition</span>
+              <span class="tag is-info is-light">Waypoint Tracking</span>
+              <span class="tag is-success is-light">Trajectory Following</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Card 5: Optional composition video -->
+        <div class="item">
+          <video controls muted playsinline loop preload="metadata"
+                 poster="static/images/sim_traj.png">
+            <source src="static/videos/trajectory_composition_sim.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="result-card-content">
+            <p class="heading">Simulation Video</p>
+
+            <h3 class="result-card-title">
+              Primitive-based Navigation
+            </h3>
+
+            <p>
+              The simulated robot navigates through complex waypoint sequences by selecting between
+              straight-line and turning primitives according to its relative pose to each target waypoint.
+            </p>
+
+            <div class="tags are-medium result-card-tags">
+              <span class="tag is-link is-light">Simulation</span>
+              <span class="tag is-info is-light">Planner</span>
+              <span class="tag is-success is-light">Composed Gait</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Card 6: Sim-to-real transfer -->
+        <div class="item">
+          <img src="static/images/sim_real_combined_2x2_mean_std.png"
+               alt="Comparison between simulation and real-world performance"
+               loading="lazy">
+
+          <div class="result-card-content">
+            <p class="heading">Result 5 / Sim-to-Real</p>
+
+            <h3 class="result-card-title">
+              Zero-shot Sim-to-Real Transfer
+            </h3>
+
+            <p>
+              Policies trained only in simulation transfer directly to the physical 3-bar tensegrity robot
+              without fine-tuning. The learned primitives preserve comparable trajectory trends and stable
+              coordinated rolling behaviors in hardware experiments.
+            </p>
+
+            <div class="tags are-medium result-card-tags">
+              <span class="tag is-success is-light">Zero-shot Transfer</span>
+              <span class="tag is-info is-light">Hardware</span>
+              <span class="tag is-link is-light">GNN-SAC</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Card 7: Hardware video -->
+        <div class="item">
+          <video controls muted playsinline loop preload="metadata"
+                 poster="static/images/rollout.png">
+            <source src="static/videos/hardware_rollout.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="result-card-content">
+            <p class="heading">Hardware Video</p>
+
+            <h3 class="result-card-title">
+              Real-world Locomotion Primitives
+            </h3>
+
+            <p>
+              On the physical robot, the zero-shot transferred policy reproduces straight-line tracking,
+              counterclockwise turning, and clockwise turning. The robot achieves stable rolling behaviors
+              through coordinated tendon actuation.
+            </p>
+
+            <div class="tags are-medium result-card-tags">
+              <span class="tag is-success is-light">Straight Tracking</span>
+              <span class="tag is-warning is-light">CW Turning</span>
+              <span class="tag is-info is-light">CCW Turning</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- End results carousel -->
+
+
+      <!-- Primitive videos -->
+      <div class="columns is-centered has-text-centered" style="margin-top: 2.5rem;">
+        <div class="column is-four-fifths">
+          <h3 class="title is-4" style="margin-bottom: 0.75rem;">
+            Hardware Motion Primitives
+          </h3>
+          <p class="subtitle is-6" style="color: var(--text-secondary); line-height: 1.7;">
+            The same learned policies are deployed on hardware to reproduce the three primitives.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-variable is-4">
+
+        <div class="column">
+          <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);">
+            <video controls muted playsinline loop preload="metadata"
+                   poster="static/images/rollout.png"
+                   style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+              <source src="static/videos/straight_tracking_real.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-top: 1rem; margin-bottom: 0.5rem !important;">
+              Straight-line Tracking
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              The robot tracks a reference point placed 1 m ahead and executes stable forward rolling.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);">
+            <video controls muted playsinline loop preload="metadata"
+                   poster="static/images/rollout.png"
+                   style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+              <source src="static/videos/ccw_turning_real.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-top: 1rem; margin-bottom: 0.5rem !important;">
+              Counterclockwise Turning
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              The policy produces a flipping-based gait with stable counterclockwise rotation.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);">
+            <video controls muted playsinline loop preload="metadata"
+                   poster="static/images/rollout.png"
+                   style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+              <source src="static/videos/cw_turning_real.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-top: 1rem; margin-bottom: 0.5rem !important;">
+              Clockwise Turning
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              The robot turns clockwise through coordinated actuation and fore-aft swinging motion.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Trajectory composition -->
+      <div class="columns is-centered has-text-centered" style="margin-top: 3.5rem;">
+        <div class="column is-four-fifths">
+          <h3 class="title is-4" style="margin-bottom: 0.75rem;">
+            Trajectory Composition
+          </h3>
+          <p class="subtitle is-6" style="color: var(--text-secondary); line-height: 1.7;">
+            Learned motion primitives can be composed by a high-level planner to follow complex waypoint sequences.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-vcentered is-variable is-6">
+
+        <div class="column is-6">
+          <figure>
+            <img src="static/images/sim_traj.png"
+                 alt="Composed trajectory tracking using learned motion primitives"
+                 loading="lazy"
+                 style="width: 100%; height: auto;">
+            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Composed trajectory tracking using learned primitives. The robot follows infinity-shaped,
+              spiral, and six-petal flower waypoint sequences.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="column is-6">
+          <div class="box" style="border-radius: var(--border-radius-lg);">
+            <video controls muted playsinline loop preload="metadata"
+                   poster="static/images/sim_traj.png"
+                   style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+              <source src="static/videos/trajectory_composition_sim.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <p class="title is-5" style="padding-bottom: 0; margin-top: 1rem; margin-bottom: 0.5rem !important;">
+              Primitive-based Navigation
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              A high-level planner sequentially selects straight-line and turning primitives according
+              to the robot's relative pose to each target waypoint.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Robustness and generalization -->
+      <div class="columns is-centered has-text-centered" style="margin-top: 3.5rem;">
+        <div class="column is-four-fifths">
+          <h3 class="title is-4" style="margin-bottom: 0.75rem;">
+            Robustness and Generalization
+          </h3>
+          <p class="subtitle is-6" style="color: var(--text-secondary); line-height: 1.7;">
+            We test the learned policy under model perturbations, sensing noise, sloped terrain,
+            actuation error, and morphology changes.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-variable is-5">
+
+        <div class="column is-6">
+          <figure>
+            <img src="static/images/robustness_5.png"
+                 alt="Robustness evaluation under model and environment perturbations"
+                 loading="lazy"
+                 style="width: 100%; height: auto;">
+            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Robustness evaluation under stiffness variation, observation noise, ground slope,
+              dynamic stiffness variation, and actuation error.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="column is-6">
+          <figure>
+            <img src="static/images/cross_morphology_generalization.png"
+                 alt="Cross-morphology generalization from 3-bar to 4-bar and 5-bar tensegrity robots"
+                 loading="lazy"
+                 style="width: 100%; height: auto;">
+            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Cross-morphology generalization. A policy trained on the 3-bar robot is directly deployed
+              to 4-bar and 5-bar configurations without retraining.
+            </figcaption>
+          </figure>
+        </div>
+
+      </div>
+
+      <div class="columns is-variable is-4" style="margin-top: 1rem;">
+
+        <div class="column">
+          <div class="notification is-link is-light" style="height: 100%; border-radius: var(--border-radius-lg);">
+            <strong>Stiffness variation:</strong>
+            turning rates remain functional for cross-tendon stiffness values around 300&ndash;800 N/m.
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="notification is-info is-light" style="height: 100%; border-radius: var(--border-radius-lg);">
+            <strong>Observation noise:</strong>
+            tracking remains stable under observation noise up to &sigma;<sub>n</sub> = 0.15 m.
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="notification is-success is-light" style="height: 100%; border-radius: var(--border-radius-lg);">
+            <strong>Ground slope:</strong>
+            the robot maintains stable locomotion on inclined planes up to about 25&deg;.
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Sim-to-real comparison -->
+      <div class="columns is-centered has-text-centered" style="margin-top: 3.5rem;">
+        <div class="column is-four-fifths">
+          <h3 class="title is-4" style="margin-bottom: 0.75rem;">
+            Sim-to-Real Transfer
+          </h3>
+          <p class="subtitle is-6" style="color: var(--text-secondary); line-height: 1.7;">
+            The GNN-SAC policy transfers from simulation to hardware while preserving comparable
+            trajectory trends and coordinated rolling behaviors.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-vcentered is-variable is-6">
+
+        <div class="column is-7">
+          <figure>
+            <img src="static/images/sim_real_combined_2x2_mean_std.png"
+                 alt="Comparison between simulation and real-world performance"
+                 loading="lazy"
+                 style="width: 100%; height: auto;">
+            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Comparison between simulation and real-world performance for CoM trajectories,
+              forward tracking, and bidirectional turning.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="column is-5">
+          <div class="box" style="border-radius: var(--border-radius-lg);">
+            <p class="heading">Why Transfer Works</p>
+
+            <div class="content" style="color: var(--text-secondary); line-height: 1.8;">
+              <p>
+                Although the real robot exhibits nonlinear stiffness, hysteresis, friction, and sensing
+                delays, the graph policy operates on local relational features and encourages distributed
+                coordination through message passing.
+              </p>
+
+              <p>
+                This morphology-aware inductive bias reduces sensitivity to precise dynamic modeling,
+                helping the learned primitives remain stable after deployment.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Real-world rollout image -->
+      <div class="columns is-centered" style="margin-top: 2rem;">
+        <div class="column is-full">
+          <figure>
+            <img src="static/images/rollout.png"
+                 alt="Real-world rollout sequences of learned locomotion primitives"
+                 loading="lazy"
+                 style="width: 100%; height: auto;">
+            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Real-world rollout sequences of learned locomotion primitives: clockwise turning,
+              counterclockwise turning, and straight-line tracking. The colored endcaps indicate
+              corresponding node pairs in the tensegrity structure.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      </template>
+
+
+      <!-- Final takeaway -->
+      <div class="notification is-primary is-light"
+           style="margin-top: 2.5rem; border-radius: var(--border-radius-lg);">
+        <strong>Overall:</strong>
+        the results show that encoding tensegrity morphology with a graph neural network improves
+        learning efficiency, final performance, robustness, composability, and zero-shot hardware transfer.
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End results -->
 
 
 <!-- Image carousel -->
