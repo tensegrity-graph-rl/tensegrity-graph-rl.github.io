@@ -716,64 +716,14 @@
       <!-- End result highlights -->
 
       <!-- Results carousel -->
-      <template>
       <div id="results-carousel" class="carousel results-carousel">
-
-        <div class="item">
-          <div class="columns is-centered" style="margin-top: 2.5rem;">
-            <div class="column is-full">
-              <div class="columns is-vcentered is-variable is-6">
-
-                  <div class="column is-7">
-                    <div class="publication-video" style="padding-bottom: 56.25%;">
-                      <video controls muted playsinline loop preload="metadata"
-                            poster="static/images/rollout.png"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-                                    object-fit: cover; border-radius: var(--border-radius-lg);">
-                        <source src="static/videos/hardware_rollout.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  </div>
-
-                  <div class="column is-5">
-                    <p class="heading">Hardware Demonstration</p>
-                    <p class="title is-4" style="padding-bottom: 0; margin-bottom: 1rem !important;">
-                      Zero-shot Real-world Locomotion
-                    </p>
-
-                    <div class="result-card-content" style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
-                      <p style="margin-bottom: 1rem;">
-                        Policies trained only in simulation are deployed on the physical 3-bar tensegrity
-                        robot without fine-tuning. The robot successfully executes straight-line tracking,
-                        clockwise turning, and counterclockwise turning.
-                      </p>
-
-                      <p style="margin-bottom: 1rem;">
-                        In hardware experiments, the robot achieves stable coordinated rolling, with
-                        mean forward tracking speed of <strong>0.256 m/s</strong>, counterclockwise
-                        turning rate of <strong>2.76&deg;/s</strong>, and clockwise turning rate of
-                        <strong>1.72&deg;/s</strong>.
-                      </p>
-                    </div>
-
-                    <div class="tags are-medium">
-                      <span class="tag is-success is-light">Zero-shot Transfer</span>
-                      <span class="tag is-info is-light">Physical Robot</span>
-                      <span class="tag is-link is-light">GNN-SAC</span>
-                    </div>
-                  </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
 
         <!-- Card 1: Learning performance -->
         <div class="item">
           <div class="columns is-centered has-text-centered" style="margin-top: 0rem;">
             <div class="column is-four-fifths">
-              <h3 class="title is-4" style="margin-bottom: 0.75rem;">
+              <p class="heading">Result 1 / Training</p>
+              <h3 class="result-card-title" style="margin-bottom: 0.75rem;">
                 Learning Performance
               </h3>
             </div>
@@ -831,7 +781,8 @@
         <div class="item">
           <div class="columns is-centered has-text-centered" style="margin-top: 0rem;">
             <div class="column is-four-fifths">
-              <h3 class="title is-4" style="margin-bottom: 0.75rem;">
+              <p class="heading">Result 2 / Locomotion</p>
+              <h3 class="result-card-title" style="margin-bottom: 0.75rem;">
                 Motion Primitive Evaluation
               </h3>
             </div>
@@ -895,16 +846,16 @@
 
         <!-- Card 3: Robustness -->
         <div class="item">
-          <div class="columns is-centered" style="margin-top: 2.5rem;">
+          <div class="columns is-centered" style="margin-top: 0rem;">
             <div class="column is-full">
               <div class="columns is-vcentered is-variable is-6">
-                <div class="column is-7">
+                <div class="column is-6">
                   <img src="static/images/robustness_5.png"
                       alt="Robustness evaluation under model and environment perturbations"
                       loading="lazy">
                 </div>
 
-                <div class="column is-5">
+                <div class="column is-6">
                   <p class="heading">Result 3 / Robustness</p>
 
                   <h3 class="result-card-title">
@@ -925,11 +876,20 @@
                     </p>
                   </div>
 
-                  <div class="tags are-medium result-card-tags">
+                  <!-- <div class="tags are-medium result-card-tags">
                     <span class="tag is-link is-light">Stiffness Variation</span>
                     <span class="tag is-info is-light">Observation Noise</span>
                     <span class="tag is-primary is-light">Ground slope</span>
+                    <span class="tag is-success is-light">Dynamic Stiffness</span>
                     <span class="tag is-warning is-light">Actuation error</span>
+                  </div> -->
+
+                  <div class="notification is-info is-light" style="border-radius: var(--border-radius-lg);">
+                    <div class="result-card-content">
+                      <strong>Takeaway:</strong> 
+                      Embedding morphological structure in the policy network 
+                      enhances robustness to uncertainties.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -939,78 +899,123 @@
 
         <!-- Card 4: Cross-Morphology Generalization -->
         <div class="item">
-          <img src="static/images/cross_morphology_generalization.png"
-              alt="Cross-morphology generalization from 3-bar to 4-bar and 5-bar tensegrity robots"
-              loading="lazy">
-
-          <div class="result-card-content">
-            <p class="heading">Result 4 / Generalization</p>
-
-            <h3 class="result-card-title">
-              Cross-Morphology Generalization
-            </h3>
-
-            <p style="margin-bottom: 1rem;">
-              The same policy trained on the 3-bar robot can also be deployed to 4-bar and 5-bar
-              tensegrity configurations without retraining, demonstrating zero-shot generalization
-              across morphologies.
-            </p>
-          </div>
-        </div>
-
-
-        <!-- Card 5: Composable primitives -->
-        <div class="item">
-          <img src="static/images/sim_traj.png"
-               alt="Composed trajectory tracking using learned motion primitives"
-               loading="lazy">
-
-          <div class="result-card-content">
-            <p class="heading">Result 4 / Composition</p>
-
-            <h3 class="result-card-title">
-              Composable Motion Primitives
-            </h3>
-
-            <p>
-              Straight-line tracking and bidirectional turning can be sequenced by a high-level planner
-              to follow complex waypoint trajectories. The robot follows infinity-shaped, spiral, and
-              six-petal flower paths by composing learned primitives.
-            </p>
-
-            <div class="tags are-medium result-card-tags">
-              <span class="tag is-primary is-light">Primitive Composition</span>
-              <span class="tag is-info is-light">Waypoint Tracking</span>
-              <span class="tag is-success is-light">Trajectory Following</span>
+          <div class="columns is-centered has-text-centered" style="margin-top: 0rem; margin-bottom: -1rem;">
+            <div class="column is-four-fifths">
+              <p class="heading">Result 4 / Generalization</p>
+              <h3 class="result-card-title">
+                Cross-Morphology Generalization
+              </h3>
             </div>
           </div>
+
+          <figure style="margin-bottom: 2rem;">
+            <img src="static/images/cross_morphology_generalization.png"
+                alt="Cross-morphology generalization from 3-bar to 4-bar and 5-bar tensegrity robots"
+                loading="lazy">
+          </figure>
+
+          <div class="columns is-centered" style="margin-top: 0rem;">
+
+            <div class="column is-4">
+              <video controls muted playsinline loop preload="metadata"
+                    poster="" style="margin-bottom: 1rem;">
+                <source src="static/videos/tgrl_config_generalization.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            
+            <div class="column is-8">
+                
+                <div class="result-card-content">
+                  <p style="margin-bottom: 1rem;">
+                    A straight-line tracking policy trained on the 3-bar prism tensegrity robot is directly deployed to 
+                    4-bar and 5-bar configurations without retraining. Each subplot aggregates 100 trials.
+                  </p>
+
+                  <p style="margin-bottom: 1rem;">
+                    Whileaccuracy degrades as the structural difference from the training morphology increases, 
+                    the locomotion remains functional.
+                  </p>
+                  
+                  <p style="margin-bottom: 1rem;">
+                    It is important to note that conventional MLP-based policies cannot be directly applied in this setting 
+                    due to their fixed input and output dimensions, which depend on the specific robot configuration.
+                  </p>
+
+                  <div class="notification is-info is-light" style="border-radius: var(--border-radius-lg);">
+                    <div class="result-card-content">
+                      <strong>Takeaway:</strong> 
+                      The GNN-based policy generalizes zero-shot across tensegrity morphologies, 
+                      preserving functional locomotion with gradual performance degradation.
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+
         </div>
 
 
-        <!-- Card 5: Optional composition video -->
+        <!-- Card 5: Trajectory composition -->
         <div class="item">
-          <video controls muted playsinline loop preload="metadata"
-                 poster="static/images/sim_traj.png">
-            <source src="static/videos/trajectory_composition_sim.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <div class="columns is-centered" style="margin-top: 0rem;">
+            <div class="column is-full">
+              
+              <div class="columns is-centered has-text-centered" style="margin-top: 0rem;">
+                <div class="column is-four-fifths">
+                  <p class="heading">Result 5 / Composition</p>
+                  <h3 class="result-card-title" style="margin-bottom: 0rem;">
+                    Composable Motion Primitives
+                  </h3>
+                </div>
+              </div>
 
-          <div class="result-card-content">
-            <p class="heading">Simulation Video</p>
+              <div class="columns is-vcentered is-variable is-6">
+                <div class="column is-6">
+                  <video controls muted playsinline loop preload="metadata"
+                        poster="" style="margin-bottom: 1rem;">
+                    <source src="static/videos/tgrl_traj_composition_inf.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <video controls muted playsinline loop preload="metadata"
+                        poster="" style="margin-bottom: 1rem;">
+                    <source src="static/videos/tgrl_traj_composition_spiral.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  
+                </div>
+                
+                <div class="column is-6">
+                  <video controls muted playsinline loop preload="metadata"
+                        poster="" style="margin-bottom: 1.2rem;">
+                    <source src="static/videos/tgrl_traj_composition_blume.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  
+                  <div class="result-card-content">
+                    <!-- <p class="heading">Result 5 / Composition</p>
 
-            <h3 class="result-card-title">
-              Primitive-based Navigation
-            </h3>
+                    <h3 class="result-card-title">
+                      Composable Motion Primitives
+                    </h3> -->
 
-            <p>
-              The simulated robot navigates through complex waypoint sequences by selecting between
-              straight-line and turning primitives according to its relative pose to each target waypoint.
-            </p>
+                    <p class="heading">From Motion Primitives to Trajectories</p>
 
-            <div class="tags are-medium result-card-tags">
-              <span class="tag is-link is-light">Simulation</span>
-              <span class="tag is-info is-light">Planner</span>
-              <span class="tag is-success is-light">Composed Gait</span>
+                    <p>
+                      Straight-line tracking and bidirectional turning can be sequenced by a high-level planner
+                      to follow complex waypoint trajectories. The robot follows infinity-shaped, spiral, and
+                      six-petal flower paths by composing learned primitives.
+                    </p>
+
+                    <div class="tags are-medium result-card-tags">
+                      <span class="tag is-primary is-light">Primitive Composition</span>
+                      <span class="tag is-info is-light">Waypoint Tracking</span>
+                      <span class="tag is-success is-light">Trajectory Following</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1018,57 +1023,83 @@
 
         <!-- Card 6: Sim-to-real transfer -->
         <div class="item">
-          <img src="static/images/sim_real_combined_2x2_mean_std.png"
+          <!-- <img src="static/images/sim_real_combined_2x2_mean_std.png"
                alt="Comparison between simulation and real-world performance"
-               loading="lazy">
+               loading="lazy"> -->
+
+          <div class="columns is-variable is-2">
+
+            <div class="column">
+              <!-- <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);"> -->
+                <video controls muted playsinline loop preload="metadata"
+                      poster=""
+                      style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+                  <source src="static/videos/tgrl_sim2real_tracking.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+
+                <div class="result-card-content" style="text-align: center;">
+                  Straight-line Tracking
+                </div>
+              <!-- </div> -->
+            </div>
+
+            <div class="column">
+              <!-- <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);"> -->
+                <video controls muted playsinline loop preload="metadata"
+                      poster="static/images/rollout.png"
+                      style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+                  <source src="static/videos/tgrl_sim2real_ccw.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+
+                <div class="result-card-content" style="text-align: center;">
+                  Counterclockwise Turning
+                </div>
+              <!-- </div> -->
+            </div>
+
+            <div class="column">
+              <!-- <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);"> -->
+                <video controls muted playsinline loop preload="metadata"
+                      poster="static/images/rollout.png"
+                      style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+                  <source src="static/videos/tgrl_sim2real_cw.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+
+                <div class="result-card-content" style="text-align: center;">
+                  Clockwise Turning
+                </div>
+              <!-- </div> -->
+            </div>
+
+          </div>
 
           <div class="result-card-content">
-            <p class="heading">Result 5 / Sim-to-Real</p>
+            <p class="heading">Result 6 / Sim-to-Real</p>
 
             <h3 class="result-card-title">
               Zero-shot Sim-to-Real Transfer
             </h3>
 
-            <p>
-              Policies trained only in simulation transfer directly to the physical 3-bar tensegrity robot
-              without fine-tuning. The learned primitives preserve comparable trajectory trends and stable
-              coordinated rolling behaviors in hardware experiments.
+            <p style="margin-bottom: 1rem;">
+              Policies trained only in simulation are deployed on the physical 3-bar tensegrity
+              robot without fine-tuning. The robot successfully executes straight-line tracking,
+              clockwise turning, and counterclockwise turning.
+            </p>
+
+            <p style="margin-bottom: 1rem;">
+              In hardware experiments, the robot achieves stable coordinated rolling, with
+              mean forward tracking speed of <strong>0.256 m/s</strong>, counterclockwise
+              turning rate of <strong>2.76&deg;/s</strong>, and clockwise turning rate of
+              <strong>1.72&deg;/s</strong>.
             </p>
 
             <div class="tags are-medium result-card-tags">
               <span class="tag is-success is-light">Zero-shot Transfer</span>
-              <span class="tag is-info is-light">Hardware</span>
+              <span class="tag is-info is-light">Physical Robot</span>
               <span class="tag is-link is-light">GNN-SAC</span>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Card 7: Hardware video -->
-        <div class="item">
-          <video controls muted playsinline loop preload="metadata"
-                 poster="static/images/rollout.png">
-            <source src="static/videos/hardware_rollout.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div class="result-card-content">
-            <p class="heading">Hardware Video</p>
-
-            <h3 class="result-card-title">
-              Real-world Locomotion Primitives
-            </h3>
-
-            <p>
-              On the physical robot, the zero-shot transferred policy reproduces straight-line tracking,
-              counterclockwise turning, and clockwise turning. The robot achieves stable rolling behaviors
-              through coordinated tendon actuation.
-            </p>
-
-            <div class="tags are-medium result-card-tags">
-              <span class="tag is-success is-light">Straight Tracking</span>
-              <span class="tag is-warning is-light">CW Turning</span>
-              <span class="tag is-info is-light">CCW Turning</span>
             </div>
           </div>
         </div>
@@ -1077,270 +1108,12 @@
       <!-- End results carousel -->
 
 
-      <!-- Primitive videos -->
-      <div class="columns is-centered has-text-centered" style="margin-top: 2.5rem;">
-        <div class="column is-four-fifths">
-          <h3 class="title is-4" style="margin-bottom: 0.75rem;">
-            Hardware Motion Primitives
-          </h3>
-          <p class="subtitle is-6" style="color: var(--text-secondary); line-height: 1.7;">
-            The same learned policies are deployed on hardware to reproduce the three primitives.
-          </p>
-        </div>
-      </div>
-
-      <div class="columns is-variable is-4">
-
-        <div class="column">
-          <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);">
-            <video controls muted playsinline loop preload="metadata"
-                   poster="static/images/rollout.png"
-                   style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
-              <source src="static/videos/straight_tracking_real.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-
-            <p class="title is-5" style="padding-bottom: 0; margin-top: 1rem; margin-bottom: 0.5rem !important;">
-              Straight-line Tracking
-            </p>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-              The robot tracks a reference point placed 1 m ahead and executes stable forward rolling.
-            </p>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);">
-            <video controls muted playsinline loop preload="metadata"
-                   poster="static/images/rollout.png"
-                   style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
-              <source src="static/videos/ccw_turning_real.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-
-            <p class="title is-5" style="padding-bottom: 0; margin-top: 1rem; margin-bottom: 0.5rem !important;">
-              Counterclockwise Turning
-            </p>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-              The policy produces a flipping-based gait with stable counterclockwise rotation.
-            </p>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="box" style="height: 100%; border-radius: var(--border-radius-lg);">
-            <video controls muted playsinline loop preload="metadata"
-                   poster="static/images/rollout.png"
-                   style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
-              <source src="static/videos/cw_turning_real.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-
-            <p class="title is-5" style="padding-bottom: 0; margin-top: 1rem; margin-bottom: 0.5rem !important;">
-              Clockwise Turning
-            </p>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-              The robot turns clockwise through coordinated actuation and fore-aft swinging motion.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- Trajectory composition -->
-      <div class="columns is-centered has-text-centered" style="margin-top: 3.5rem;">
-        <div class="column is-four-fifths">
-          <h3 class="title is-4" style="margin-bottom: 0.75rem;">
-            Trajectory Composition
-          </h3>
-          <p class="subtitle is-6" style="color: var(--text-secondary); line-height: 1.7;">
-            Learned motion primitives can be composed by a high-level planner to follow complex waypoint sequences.
-          </p>
-        </div>
-      </div>
-
-      <div class="columns is-vcentered is-variable is-6">
-
-        <div class="column is-6">
-          <figure>
-            <img src="static/images/sim_traj.png"
-                 alt="Composed trajectory tracking using learned motion primitives"
-                 loading="lazy"
-                 style="width: 100%; height: auto;">
-            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-              Composed trajectory tracking using learned primitives. The robot follows infinity-shaped,
-              spiral, and six-petal flower waypoint sequences.
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="column is-6">
-          <div class="box" style="border-radius: var(--border-radius-lg);">
-            <video controls muted playsinline loop preload="metadata"
-                   poster="static/images/sim_traj.png"
-                   style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
-              <source src="static/videos/trajectory_composition_sim.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-
-            <p class="title is-5" style="padding-bottom: 0; margin-top: 1rem; margin-bottom: 0.5rem !important;">
-              Primitive-based Navigation
-            </p>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-              A high-level planner sequentially selects straight-line and turning primitives according
-              to the robot's relative pose to each target waypoint.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- Robustness and generalization -->
-      <div class="columns is-centered has-text-centered" style="margin-top: 3.5rem;">
-        <div class="column is-four-fifths">
-          <h3 class="title is-4" style="margin-bottom: 0.75rem;">
-            Robustness and Generalization
-          </h3>
-          <p class="subtitle is-6" style="color: var(--text-secondary); line-height: 1.7;">
-            We test the learned policy under model perturbations, sensing noise, sloped terrain,
-            actuation error, and morphology changes.
-          </p>
-        </div>
-      </div>
-
-      <div class="columns is-variable is-5">
-
-        <div class="column is-6">
-          <figure>
-            <img src="static/images/robustness_5.png"
-                 alt="Robustness evaluation under model and environment perturbations"
-                 loading="lazy"
-                 style="width: 100%; height: auto;">
-            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-              Robustness evaluation under stiffness variation, observation noise, ground slope,
-              dynamic stiffness variation, and actuation error.
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="column is-6">
-          <figure>
-            <img src="static/images/cross_morphology_generalization.png"
-                 alt="Cross-morphology generalization from 3-bar to 4-bar and 5-bar tensegrity robots"
-                 loading="lazy"
-                 style="width: 100%; height: auto;">
-            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-              Cross-morphology generalization. A policy trained on the 3-bar robot is directly deployed
-              to 4-bar and 5-bar configurations without retraining.
-            </figcaption>
-          </figure>
-        </div>
-
-      </div>
-
-      <div class="columns is-variable is-4" style="margin-top: 1rem;">
-
-        <div class="column">
-          <div class="notification is-link is-light" style="height: 100%; border-radius: var(--border-radius-lg);">
-            <strong>Stiffness variation:</strong>
-            turning rates remain functional for cross-tendon stiffness values around 300&ndash;800 N/m.
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="notification is-info is-light" style="height: 100%; border-radius: var(--border-radius-lg);">
-            <strong>Observation noise:</strong>
-            tracking remains stable under observation noise up to &sigma;<sub>n</sub> = 0.15 m.
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="notification is-success is-light" style="height: 100%; border-radius: var(--border-radius-lg);">
-            <strong>Ground slope:</strong>
-            the robot maintains stable locomotion on inclined planes up to about 25&deg;.
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- Sim-to-real comparison -->
-      <div class="columns is-centered has-text-centered" style="margin-top: 3.5rem;">
-        <div class="column is-four-fifths">
-          <h3 class="title is-4" style="margin-bottom: 0.75rem;">
-            Sim-to-Real Transfer
-          </h3>
-          <p class="subtitle is-6" style="color: var(--text-secondary); line-height: 1.7;">
-            The GNN-SAC policy transfers from simulation to hardware while preserving comparable
-            trajectory trends and coordinated rolling behaviors.
-          </p>
-        </div>
-      </div>
-
-      <div class="columns is-vcentered is-variable is-6">
-
-        <div class="column is-7">
-          <figure>
-            <img src="static/images/sim_real_combined_2x2_mean_std.png"
-                 alt="Comparison between simulation and real-world performance"
-                 loading="lazy"
-                 style="width: 100%; height: auto;">
-            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-              Comparison between simulation and real-world performance for CoM trajectories,
-              forward tracking, and bidirectional turning.
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="column is-5">
-          <div class="box" style="border-radius: var(--border-radius-lg);">
-            <p class="heading">Why Transfer Works</p>
-
-            <div class="content" style="color: var(--text-secondary); line-height: 1.8;">
-              <p>
-                Although the real robot exhibits nonlinear stiffness, hysteresis, friction, and sensing
-                delays, the graph policy operates on local relational features and encourages distributed
-                coordination through message passing.
-              </p>
-
-              <p>
-                This morphology-aware inductive bias reduces sensitivity to precise dynamic modeling,
-                helping the learned primitives remain stable after deployment.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- Real-world rollout image -->
-      <div class="columns is-centered" style="margin-top: 2rem;">
-        <div class="column is-full">
-          <figure>
-            <img src="static/images/rollout.png"
-                 alt="Real-world rollout sequences of learned locomotion primitives"
-                 loading="lazy"
-                 style="width: 100%; height: auto;">
-            <figcaption style="margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-              Real-world rollout sequences of learned locomotion primitives: clockwise turning,
-              counterclockwise turning, and straight-line tracking. The colored endcaps indicate
-              corresponding node pairs in the tensegrity structure.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-      </template>
-
-
       <!-- Final takeaway -->
       <div class="notification is-primary is-light"
            style="margin-top: 2.5rem; border-radius: var(--border-radius-lg);">
         <strong>Overall:</strong>
         the results show that encoding tensegrity morphology with a graph neural network improves
-        learning efficiency, final performance, robustness, composability, and zero-shot hardware transfer.
+        learning efficiency, final performance, robustness, enables composability, and zero-shot hardware transfer.
       </div>
 
     </div>
